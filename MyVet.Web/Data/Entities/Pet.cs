@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
 
 namespace MyVet.Web.Data.Entities
 {
@@ -33,5 +34,11 @@ namespace MyVet.Web.Data.Entities
         [Display(Name = "Nacimiento")]
         [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}")]
         public DateTime BornLocal => Born.ToLocalTime();
+
+        public PetType PetType { get; set; }
+        public Owner Owner { get; set; }
+        public ICollection<History> Histories { get; set; }
+        public ICollection<Agenda> Agendas { get; set; }
+
     }
 }

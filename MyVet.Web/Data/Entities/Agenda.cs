@@ -15,11 +15,13 @@ namespace MyVet.Web.Data.Entities
         public string Remarks { get; set; }
 
         [Display(Name = "Esta Disponible?")]
-        public string IsAvaliable { get; set; }
+        public bool IsAvaliable { get; set; }
 
         [Display(Name = "Fecha")]
         [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd H:mm tt}")]
         public DateTime DateLocal => Date.ToLocalTime();
 
+        public Owner Owner { get; set; }
+        public Pet Pet { get; set; }
     }
 }
